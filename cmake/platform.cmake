@@ -17,9 +17,7 @@ function(set_platform_flags TARGET)
             LIBRARY_OUTPUT_DIRECTORY "${BUILD_OUTPUT_DIR}"
     )
 
-    # Turn on LTO and export compile commands for VSCode to use
-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
-    set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # WARNING: On Windows, this flag has no effect for Visual Studio generators. Ninja or Ninja Multi-Config is recommended
+    
 endfunction()
 
 

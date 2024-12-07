@@ -20,6 +20,9 @@ function(get_and_link_godot_cpp TARGET TAG PRECISION)
         CXX_VISIBILITY_PRESET hidden
         VISIBILITY_INLINES_HIDDEN ON
     )
+    # Turn on LTO and export compile commands for VSCode to use
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # WARNING: On Windows, this flag has no effect for Visual Studio generators. Ninja or Ninja Multi-Config is recommended
 
     target_link_libraries(${TARGET} PRIVATE godot-cpp)
 
