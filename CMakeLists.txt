@@ -22,7 +22,6 @@ project(gdextension-template LANGUAGES CXX)
     add_library(${PROJECT_NAME} SHARED ${SRC})
     target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/src")
 
-
     #[[
     set_platform_flags sets the needed flags for the extension 
     as well as the directory that the library is going to be 
@@ -44,7 +43,8 @@ project(gdextension-template LANGUAGES CXX)
     get_and_link_godot_cpp(
         ${PROJECT_NAME}
         godot-4.3-stable
-        "double"
+        ${PRECISION}            # Provided via the command line
+        ${EXTENSION_API_FILE}   # Provided via the command line
     )
 
     #[[
@@ -52,7 +52,7 @@ project(gdextension-template LANGUAGES CXX)
     from github, include it's CMakeList and link it to a target
     Variables:
     --- TARGET: target name
-    --- LIB_DIR: Directory within the build and config folder to place 
+    --- LIB_DIR: Directory within the build and config folder to place
         .gdextendion file in. Use LIB_DIR provided by set_platform_flags()
     ]]
     generate_gdextension_file(${PROJECT_NAME} ${LIB_DIR})
