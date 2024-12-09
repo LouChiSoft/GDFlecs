@@ -5,4 +5,4 @@ compatibility_minimum = 4.3
 ${IS_RELOADABLE}
 
 [libraries]
-${PLATFORM} = ${LIB_LOC}
+${PLATFORM} = "${LIB_LOC}"

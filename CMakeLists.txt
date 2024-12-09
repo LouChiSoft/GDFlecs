@@ -39,12 +39,12 @@ project(gdextension-template LANGUAGES CXX)
     Variables:
     --- TARGET: target name
     --- TAG: Tag or Branch to checkout when linking godot-cpp 
-    --- PRECISION: Floating point precision. Valid arguments: SINGLE, DOUBLE
+    --- PRECISION: Floating point precision. Valid arguments: single, double
     ]]
     get_and_link_godot_cpp(
-        ${PROJECT_NAME} 
+        ${PROJECT_NAME}
         godot-4.3-stable
-        "DOUBLE"
+        "double"
     )
 
     #[[
