@@ -5,7 +5,4 @@ compatibility_minimum = 4.3
 ${IS_RELOADABLE}
 
 [libraries]
-
-linux.${CONFIG_LOWER}.x86_64 = "lib/${SYSTEM}/lib${PROJECT_NAME}.so"
-macos.${CONFIG_LOWER} = "lib/${SYSTEM}/lib${PROJECT_NAME}.dylib"
-windows.${CONFIG_LOWER}.x86_64 = "lib/${SYSTEM}/${LIB_PREFIX}${PROJECT_NAME}.dll"
+${PLATFORM} = ${LIB_LOC}

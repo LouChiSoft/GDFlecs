@@ -1,3 +1,11 @@
+# IDE folder ignores
+/.idea/
+/.vscode/
+
+# Common build folder ignores
+/build/
+
+# CMake specific ignores
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -10,3 +18,11 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
+
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Remove this if you intend to save your addon to git.
+# Unrecommened if you do
+addons/

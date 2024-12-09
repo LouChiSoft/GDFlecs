@@ -14,13 +14,14 @@ project(gdextension-template LANGUAGES CXX)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-    # Define GDExtension shared library
-    add_library(${PROJECT_NAME} SHARED)
-
-    # Add sources to GDExtension
+    #[[
+    How you define and add sources to your extension is up to
+    you. But this will work as a simple build for now.
+    ]]
     file(GLOB SRC "src/*.cpp")
-    target_sources(${PROJECT_NAME} PRIVATE ${SRC})
+    add_library(${PROJECT_NAME} SHARED ${SRC})
     target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/src")
+
 
     #[[
     set_platform_flags sets the needed flags for the extension 
@@ -56,5 +57,12 @@ project(gdextension-template LANGUAGES CXX)
     ]]
     generate_gdextension_file(${PROJECT_NAME} ${LIB_DIR})
 
-
-    install_in_project(${PROJECT_NAME} ${LIB_DIR})
+    #[[
+    copy_to_godot_project will copy your extension to a specific location.
+    By default it copies it to the addons folder within the demo godot project
+    included in this repository
+    Variables:
+    --- TARGET: target name
+    --- DST: destination folder to copy the extension to
+    ]]
+    copy_to_godot_project(${PROJECT_NAME} "${CMAKE_SOURCE_DIR}/demo/addons")

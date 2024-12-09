@@ -6,4 +6,4 @@ using namespace godot;
 
 // TODO: Rename 'example' to extension name
 void initialize_example_module(ModuleInitializationLevel p_level);
-void uninitialize_example_module(ModuleInitializationLevel p_level);
+void terminate_example_module(ModuleInitializationLevel p_level);
