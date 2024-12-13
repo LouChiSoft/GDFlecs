@@ -1,5 +1,6 @@
 function(get_and_link_godot_cpp TARGET TAG PRECISION EXTENSION_FILE)
 
+    set(GODOT_ENABLE_HOT_RELOAD ON CACHE INTERNAL "Enable hot reloading support")
     set(GODOT_CPP_SYSTEM_HEADERS ON CACHE INTERNAL "Generate system headers")
     set(GODOT_CPP_WARNING_AS_ERROR OFF CACHE INTERNAL "Treat warnings as errors")
     set(GENERATE_TEMPLATE_GET_NODE ON CACHE INTERNAL "Get template node")

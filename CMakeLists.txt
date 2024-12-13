@@ -4,13 +4,13 @@ cmake_minimum_required(VERSION 3.25)
 include(cmake/apple_silicon.cmake) # Handling Apple Silicon specific behaviours
 include(cmake/platform.cmake)      # Handling outputs based on platform
 include(cmake/godot-cpp.cmake)     # Handle getting and linking Godot-CPP
-include(cmake/gdextension.cmake)   # Handling the creation of the .gdextension file 
+include(cmake/flecs.cmake)         # Handle getting and linking flecs
+include(cmake/gdextension.cmake)   # Handling the creation of the .gdextension file
 
 # Apple Silicon devices need flags set before the project is created.
 set_apple_silicon_flags()
 
-# TODO: Update project name
-project(gdextension-template LANGUAGES CXX)
+project(gdflecs LANGUAGES CXX)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -45,6 +45,19 @@ project(gdextension-template LANGUAGES CXX)
         godot-4.3-stable
         ${PRECISION}            # Provided via the command line
         ${EXTENSION_API_FILE}   # Provided via the command line
+    )
+
+    #[[
+    get_and_link_godot_cpp uses FetchContent to download godot-cpp
+    from github, include it's CMakeList and link it to a target
+    Variables:
+    --- TARGET: target name
+    --- TAG: Tag or Branch to checkout when linking godot-cpp
+    --- PRECISION: Floating point precision. Valid arguments: single, double
+    ]]
+    get_and_link_flecs(
+        ${PROJECT_NAME}
+        v4.0.3
     )
 
     #[[

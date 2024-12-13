@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmsfs2w7fgkbs"]
+
+[ext_resource type="Script" path="res://scripts/node.gd" id="1_dng8d"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="2_n3jn6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_dng8d")
+
+[node name="FlecsWorld" type="FlecsWorld" parent="."]
+script = ExtResource("2_n3jn6")
