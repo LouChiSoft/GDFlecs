@@ -18,7 +18,7 @@ project(gdflecs LANGUAGES CXX)
     How you define and add sources to your extension is up to
     you. But this will work as a simple build for now.
     ]]
-    file(GLOB SRC "src/*.cpp")
+    file(GLOB_RECURSE SRC "src/*.cpp")
     add_library(${PROJECT_NAME} SHARED ${SRC})
     target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/src")
 

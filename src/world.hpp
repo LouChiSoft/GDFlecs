@@ -3,23 +3,29 @@
 #include <map>
 
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/variant/typed_array.hpp>
+
 #include <flecs.h>
 
-class FlecsWorld : public godot::Node {
-    GDCLASS(FlecsWorld, godot::Node)
-public:
-    FlecsWorld() = default;
-    ~FlecsWorld() override = default;
+namespace GDFlecs {
+    class Component;
 
-    void _ready() override;
+    class World final : public godot::Node {
+        GDCLASS(World, godot::Node)
+    public:
+        World() = default;
+        ~World() override = default;
 
-protected:
-    auto component_registered(const godot::String& commponent_name) const -> bool;
-    auto register_new_component() -> void;
+        void _ready() override;
 
-    static auto _bind_methods() -> void;
+    protected:
+        auto component_registered(const godot::String& commponent_name) const -> bool;
+        auto register_new_component() -> void;
 
-private:
-    flecs::world _world;
-    std::map<godot::String, flecs::entity> _registered_components;
-};
+        static auto _bind_methods() -> void;
+
+    private:
+        flecs::world _world;
+        std::map<godot::String, flecs::entity> _registered_components;
+    };
+}

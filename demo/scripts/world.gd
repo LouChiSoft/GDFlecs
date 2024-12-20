@@ -1,10 +1,10 @@
-class_name test_script extends FlecsWorld
+@tool class_name TestWorld extends World
 
-var field_1: int
-var field_2: float
+func _ready():
+	var extensions = GDExtensionManager.get_loaded_extensions()
 
-#func _ready():
-	#for prop in get_property_list():
-		#if prop["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE != 0:
-			#print(prop)
-	#pass
+	print("Loaded GDExtensions:")
+	for ext in extensions:
+		print("- ", ext)
+
+	pass

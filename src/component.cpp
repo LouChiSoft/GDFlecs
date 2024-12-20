@@ -2,6 +2,5 @@
 
 using namespace godot;
 
-auto FlecsComponent::_bind_methods() -> void {
-
+namespace GDFlecs {
 }

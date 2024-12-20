@@ -14,8 +14,8 @@ void initialize_gdflecs_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	GDREGISTER_CLASS(FlecsWorld);
-	GDREGISTER_CLASS(FlecsComponent);
+	GDREGISTER_CLASS(GDFlecs::World);
+	GDREGISTER_CLASS(GDFlecs::Component);
 }
 
 void terminate_gdflecs_module(ModuleInitializationLevel p_level) {

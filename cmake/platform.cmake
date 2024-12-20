@@ -47,7 +47,6 @@ function(copy_to_godot_project TARGET_NAME DST)
         set(BUILD_OUTPUT_DIR "${PROJECT_BINARY_DIR}/${BUILD_TYPE}/${TARGET_NAME}")
     endif()
 
-    message(STATUS "Copying ${BUILD_OUTPUT_DIR} to ${DST} location.")
     add_custom_command(
         TARGET ${TARGET_NAME}
         POST_BUILD
