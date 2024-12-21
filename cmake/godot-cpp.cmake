@@ -1,11 +1,12 @@
-function(get_and_link_godot_cpp TARGET TAG PRECISION EXTENSION_FILE)
+#'function(get_and_link_godot_cpp TARGET TAG PRECISION EXTENSION_FILE)
+function(get_and_link_godot_cpp TARGET TAG PRECISION)
 
     set(GODOT_ENABLE_HOT_RELOAD ON CACHE INTERNAL "Enable hot reloading support")
     set(GODOT_CPP_SYSTEM_HEADERS ON CACHE INTERNAL "Generate system headers")
     set(GODOT_CPP_WARNING_AS_ERROR OFF CACHE INTERNAL "Treat warnings as errors")
     set(GENERATE_TEMPLATE_GET_NODE ON CACHE INTERNAL "Get template node")
     set(FLOAT_PRECISION "${PRECISION}" CACHE INTERNAL "Library precision")
-    set(GODOT_CUSTOM_API_FILE "${EXTENSION_FILE}" CACHE INTERNAL "Extension api file")
+    # set(GODOT_CUSTOM_API_FILE "${EXTENSION_FILE}" CACHE INTERNAL "Extension api file")
 
     include(FetchContent)
     FetchContent_Declare(

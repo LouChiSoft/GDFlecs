@@ -44,7 +44,7 @@ project(gdflecs LANGUAGES CXX)
         ${PROJECT_NAME}
         godot-4.3-stable
         ${PRECISION}            # Provided via the command line
-        ${EXTENSION_API_FILE}   # Provided via the command line
+        # ${EXTENSION_API_FILE}   # Provided via the command line
     )
 
     #[[
